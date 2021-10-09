@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - x_button (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - x_button (from `.symlinks/plugins/x_button/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  x_button:
+    :path: ".symlinks/plugins/x_button/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  x_button: f3a44f1b4b188b83eb4ae7b7d96b59d45f415b01
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.1
