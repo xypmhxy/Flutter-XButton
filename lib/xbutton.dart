@@ -15,6 +15,8 @@ class XButton extends StatelessWidget {
   final XButtonShape? buttonShape;
   final BorderRadiusGeometry? borderRadius;
   final Color? overlayColor;
+  final Size? minSize;
+  final EdgeInsetsGeometry? padding;
 
   const XButton(
       {required this.child,
@@ -23,7 +25,9 @@ class XButton extends StatelessWidget {
       this.buttonType,
       this.buttonShape,
       this.borderRadius,
-      this.overlayColor});
+      this.overlayColor,
+      this.minSize,
+      this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +50,9 @@ class XButton extends StatelessWidget {
     }
     buttonStyle = buttonStyle.copyWith(
         shape: _getButtonShape(buttonStyle),
-        overlayColor: overlayColor != null
-            ? MaterialStateProperty.all(overlayColor)
-            : buttonStyle.overlayColor,
-        minimumSize: buttonShape == XButtonShape.circle ? null : null);
+        overlayColor: _getOverlayColor(buttonStyle),
+        minimumSize: _getMinSize(buttonStyle),
+        padding: _getPadding(buttonStyle));
     return buttonStyle;
   }
 
@@ -88,6 +91,28 @@ class XButton extends StatelessWidget {
     return currentStyle.shape;
   }
 
+  MaterialStateProperty<Color?>? _getOverlayColor(ButtonStyle currentStyle) {
+    return overlayColor != null
+        ? MaterialStateProperty.all(overlayColor)
+        : currentStyle.overlayColor;
+  }
+
+  MaterialStateProperty<Size?>? _getMinSize(ButtonStyle currentStyle) {
+    if (buttonShape == XButtonShape.circle) {
+      return MaterialStateProperty.all(Size(1, 1));
+    }
+    return minSize != null
+        ? MaterialStateProperty.all(minSize)
+        : currentStyle.minimumSize;
+  }
+
+  MaterialStateProperty<EdgeInsetsGeometry?>? _getPadding(
+      ButtonStyle currentStyle) {
+    return padding != null
+        ? MaterialStateProperty.all(padding)
+        : currentStyle.padding;
+  }
+
   XButton.icon(
       {required Icon icon,
       this.onPressed,
@@ -95,7 +120,9 @@ class XButton extends StatelessWidget {
       this.buttonType,
       this.buttonShape,
       this.borderRadius,
-      this.overlayColor})
+      this.overlayColor,
+      this.minSize,
+      this.padding})
       : child = icon;
 
   XButton.text(
@@ -111,7 +138,9 @@ class XButton extends StatelessWidget {
       this.buttonType,
       this.buttonShape,
       this.borderRadius,
-      this.overlayColor})
+      this.overlayColor,
+      this.minSize,
+      this.padding})
       : child = Text(text,
             style: textStyle ??
                 TextStyle(
@@ -132,7 +161,9 @@ class XButton extends StatelessWidget {
       this.buttonType,
       this.buttonShape,
       this.borderRadius,
-      this.overlayColor})
+      this.overlayColor,
+      this.minSize,
+      this.padding})
       : child =
             Image.asset(assets, width: size ?? width, height: size ?? height);
 
@@ -147,7 +178,9 @@ class XButton extends StatelessWidget {
       this.buttonType,
       this.buttonShape,
       this.borderRadius,
-      this.overlayColor})
+      this.overlayColor,
+      this.minSize,
+      this.padding})
       : child = Image.file(File(path),
             width: size ?? width, height: size ?? height);
 }
