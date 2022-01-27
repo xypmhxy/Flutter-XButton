@@ -81,13 +81,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.7.0"
-  pangle_flutter:
-    dependency: "direct main"
-    description:
-      name: pangle_flutter
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.4.4"
   path:
     dependency: transitive
     description:
@@ -162,7 +155,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.3"
 sdks:
   dart: ">=2.12.0 <3.0.0"
   flutter: ">=1.20.0"

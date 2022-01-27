@@ -1,44 +1,22 @@
 PODS:
-  - Ads-CN (3.9.0.4):
-    - Ads-CN/BUAdSDK (= 3.9.0.4)
-  - Ads-CN/BUAdSDK (3.9.0.4):
-    - Ads-CN/BUFoundation
-    - Ads-CN/Domestic
-  - Ads-CN/BUFoundation (3.9.0.4)
-  - Ads-CN/Domestic (3.9.0.4)
   - Flutter (1.0.0)
-  - pangle_flutter (1.4.4):
-    - Flutter
-    - pangle_flutter/cn (= 1.4.4)
-  - pangle_flutter/cn (1.4.4):
-    - Ads-CN (~> 3.9)
-    - Flutter
   - x_button (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - pangle_flutter (from `.symlinks/plugins/pangle_flutter/ios`)
   - x_button (from `.symlinks/plugins/x_button/ios`)
-
-SPEC REPOS:
-  trunk:
-    - Ads-CN
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  pangle_flutter:
-    :path: ".symlinks/plugins/pangle_flutter/ios"
   x_button:
     :path: ".symlinks/plugins/x_button/ios"
 
 SPEC CHECKSUMS:
-  Ads-CN: ad511239a53d06e91b3b31b60fccebc3be466f48
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  pangle_flutter: 3cce3efd4b59558313023d0bfe90591ec5f0da5b
   x_button: f3a44f1b4b188b83eb4ae7b7d96b59d45f415b01
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.11.2

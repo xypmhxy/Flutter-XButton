@@ -160,6 +160,18 @@ class _MyAppState extends State<MyApp> {
                       color: Colors.black,
                       size: 32,
                     )),
+                XButton(
+                  child: Text(
+                    "自定义子控件",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  buttonType: XButtonType.elevated,
+                  buttonShape: XButtonShape.roundRect,
+                  backgroundColor: Colors.red,
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 32),
+                  minSize: Size.zero,
+                  borderRadius: BorderRadius.all(Radius.circular(32)),
+                )
               ]),
         )),
       ),
